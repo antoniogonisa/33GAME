@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33 Razones para Amarte 💝</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #BFF8F1;
+            --primary-dark: #9DE5DD;
+            --accent: #FFB6C1;
+            --text: #2C3E50;
+            --light: #FFFFFF;
+            --shadow: rgba(191, 248, 241, 0.3);
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #BFF8F1 0%, #E8F8F5 50%, #FFE5EC 100%);
+            min-height: 100vh;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            color: var(--text);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .progress-container {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 30px var(--shadow);
+            animation: fadeIn 1s ease;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #E8F8F5;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 40px var(--shadow);
+            animation: slideUp 0.6s ease;
+            margin-bottom: 20px;
+        }
+
+        .challenge-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--text);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .challenge-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .challenge-description {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: linear-gradient(135deg, #F8FBFF 0%, var(--primary) 100%);
+            border: 2px solid var(--primary-dark);
+            padding: 18px;
+            border-radius: 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 500;
+            color: var(--text);
+            text-align: left;
+        }
+
+        .option-btn:hover {
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px var(--shadow);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .option-btn.correct {
+            background: linear-gradient(135deg, #A8E6CF 0%, #77DD77 100%);
+            border-color: #4CAF50;
+            animation: correctPulse 0.5s ease;
+        }
+
+        .option-btn.incorrect {
+            background: linear-gradient(135deg, #FFB6B6 0%, #FF8A8A 100%);
+            border-color: #F44336;
+            animation: shake 0.5s ease;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid var(--primary-dark);
+            border-radius: 15px;
+            font-size: 1em;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #F8FBFF 0%, #FFFFFF 100%);
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(255, 182, 193, 0.2);
+            transform: scale(1.02);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border: none;
+            padding: 18px 35px;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text);
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Memory Game */
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05);
+        }
+
+        .memory-card.flipped {
+            background: white;
+            border-color: var(--accent);
+        }
+
+        .memory-card.matched {
+            background: linear-gradient(135deg, #A8E6CF, #77DD77);
+            border-color: #4CAF50;
+            animation: matchPulse 0.5s ease;
+        }
+
+        /* Find Hearts Game */
+        .hearts-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .heart-item {
+            font-size: 3em;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .heart-item:hover {
+            transform: scale(1.2);
+        }
+
+        .heart-item.found {
+            animation: heartBounce 0.5s ease;
+            transform: scale(1.3);
+        }
+
+        .hearts-counter {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 15px;
+        }
+
+        /* Slider Game */
+        .slider-container {
+            margin: 30px 0;
+        }
+
+        .love-slider {
+            width: 100%;
+            height: 15px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .love-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+            border: 3px solid var(--accent);
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 20px 0;
+        }
+
+        /* Reaction Game */
+        .reaction-area {
+            background: linear-gradient(135deg, #F8FBFF, #E8F8F5);
+            border-radius: 20px;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 20px 0;
+            border: 3px dashed var(--primary-dark);
+        }
+
+        /* Puzzle Game */
+        .puzzle-pieces {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .puzzle-piece {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary), white);
+            border: 2px solid var(--primary-dark);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .puzzle-piece:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--accent), white);
+        }
+
+        .puzzle-piece.correct-position {
+            background: linear-gradient(135deg, #A8E6CF, #77DD77);
+            border-color: #4CAF50;
+        }
+
+        /* Timeline/Chronological Game */
+        .timeline-container {
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            background: linear-gradient(135deg, #F8FBFF 0%, var(--primary) 100%);
+            border: 2px solid var(--primary-dark);
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin: 10px 0;
+            cursor: move;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .timeline-item.dragging {
+            opacity: 0.5;
+        }
+
+        .timeline-item.correct-order {
+            background: linear-gradient(135deg, #A8E6CF 0%, #77DD77 100%);
+            border-color: #4CAF50;
+        }
+
+        /* Draw Heart Game (Canvas) */
+        .canvas-container {
+            position: relative;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        #heartCanvas {
+            border: 3px solid var(--primary-dark);
+            border-radius: 20px;
+            background: white;
+            cursor: crosshair;
+            width: 100%;
+            height: auto;
+        }
+
+        .canvas-instruction {
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Photo Match Game */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .photo-piece {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .photo-piece:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+
+        .photo-piece.selected {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--shadow);
+        }
+
+        .photo-piece.matched {
+            border-color: #4CAF50;
+            animation: matchPulse 0.5s ease;
+        }
+
+        /* Final Screen */
+        .final-screen {
+            text-align: center;
+            padding: 40px 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .celebration {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: bounce 1s ease infinite;
+        }
+
+        .final-screen h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            color: var(--text);
+            margin: 30px 0 20px;
+        }
+
+        .final-message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #666;
+            margin: 30px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #F8FBFF, #FFE5EC);
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+        }
+
+        .reveal-container {
+            margin: 40px 0;
+            padding: 30px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px var(--shadow);
+            animation: slideUp 1s ease 1.5s backwards;
+        }
+
+        .reveal-title {
+            font-size: 1.5em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .alhambra-icon {
+            font-size: 5em;
+            margin: 20px 0;
+            animation: glow 2s ease infinite;
+        }
+
+        .dinner-details {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+
+        .dinner-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .dinner-details p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @keyframes correctPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        @keyframes matchPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes heartBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                text-shadow: 0 0 10px var(--accent),
+                            0 0 20px var(--accent),
+                            0 0 30px var(--accent);
+            }
+            50% { 
+                text-shadow: 0 0 20px var(--accent),
+                            0 0 30px var(--accent),
+                            0 0 40px var(--accent);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>33 Razones para Amarte 💝</h1>
+            <p class="subtitle">Un viaje por nuestros momentos especiales</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-info">
+                <span>Progreso</span>
+                <span id="progressText">0/33</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <div class="card" id="challengeCard"></div>
+    </div>
+
+    <script>
+        let currentChallenge = 0;
+        let memoryCards = [];
+        let memoryFlipped = [];
+        let memoryMatched = [];
+        let heartsFound = 0;
+        let reactionStartTime = 0;
+        let puzzleOrder = [];
+        let draggedElement = null;
+        let heartPoints = [];
+        let currentHeartPoint = 0;
+        let photoMatches = [];
+        let selectedPhotos = [];
+
+        const challenges = [
+            // DESAFÍO 1: Primer beso
+            {
+                type: 'multiple',
+                title: '¿Qué día es nuestro aniversario?',
+                description: 'El día que todo empezó... 💋',
+                options: [
+                    '3 de septiembre',
+                    '3 de octubre',
+                    '3 de noviembre',
+                    '3 de diciembre'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 2: PSV-Sevilla
+            {
+                type: 'multiple',
+                title: '¿Contra qué equipo jugaba el Sevilla el día de nuestro primer beso?',
+                description: 'Aquel partido memorable... ⚽',
+                options: [
+                    'Ajax',
+                    'PSV Eindhoven',
+                    'Manchester United',
+                    'Arsenal'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 3: El cangrejo
+            {
+                type: 'multiple',
+                title: '¿Qué estaba haciendo cuando me viste por primera vez en la piscina?',
+                description: 'Según tú, fue muy gracioso... 😂',
+                options: [
+                    'Jugando al voley',
+                    'Haciendo el cangrejo',
+                    'Tirándome de bomba',
+                    'Nadando estilo libre'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 4: Primera cita
+            {
+                type: 'multiple',
+                title: '¿Qué película vimos en nuestra primera cita?',
+                description: 'Nada más romántico que... 🎬',
+                options: [
+                    'El Conjuro',
+                    'Terrifier',
+                    'Saw X',
+                    'Scream VI'
+                ],
+                correct: 2
+            },
+
+            // DESAFÍO 5: Anécdota legendaria
+            {
+                type: 'multiple',
+                title: '¿Qué me respondiste cuando te dije "te quiero" por primera vez viendo al Sevilla?',
+                description: 'Nunca lo olvidaré... 😂⚽',
+                options: [
+                    'Yo también te quiero',
+                    'Control histórico de En Nesyri',
+                    'Gol del Sevilla',
+                    'Espera que están atacando'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 6: Primera escapada
+            {
+                type: 'multiple',
+                title: '¿Cuál fue nuestro primer destino juntos?',
+                description: 'Nuestra primera escapada romántica... 🌲',
+                options: [
+                    'Cazorla',
+                    'San Nicolás del Puerto',
+                    'Sierra de Grazalema',
+                    'Aracena'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 7: Granada
+            {
+                type: 'multiple',
+                title: '¿Cuántas veces habremos estado en Granada cuando leas esto?',
+                description: 'Contando el día de hoy... 🏰',
+                options: [
+                    '1 vez',
+                    '2 veces',
+                    '3 veces',
+                    '4 veces'
+                ],
+                correct: 2
+            },
+
+            // DESAFÍO 8: Cazorla
+            {
+                type: 'input',
+                title: '¿Qué artista escuchábamos de camino a Cazorla?',
+                description: 'Ese viaje de spa y relax... 🎵',
+                answer: 'pablo alboran'
+            },
+
+            // DESAFÍO 9: Canción favorita
+            {
+                type: 'input',
+                title: '¿Cuál es nuestra canción favorita?',
+                description: 'La que siempre nos hace sonreír... 🌙',
+                answer: 'con la luna llena'
+            },
+
+            // DESAFÍO 10: Primer viaje internacional
+            {
+                type: 'multiple',
+                title: '¿Cuál fue nuestro primer viaje fuera de España?',
+                description: 'La primera aventura internacional... ✈️',
+                options: [
+                    'París',
+                    'Londres',
+                    'Roma',
+                    'Ámsterdam'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 11: Memory Game - Ciudades
+            {
+                type: 'memory',
+                title: 'Encuentra las parejas de ciudades',
+                description: 'Empareja los lugares que hemos visitado juntos... 🗺️',
+                pairs: ['🇬🇧', '🇮🇹', '🇭🇺', '🇦🇹', '🏖️', '⚽', '🏰', '🌲']
+            },
+
+            // DESAFÍO 12: Conciertos
+            {
+                type: 'input',
+                title: 'Dime uno de los artistas cuyos conciertos hemos ido juntos',
+                description: 'Cualquiera de los que hemos ido me vale... 🎤',
+                answer: 'rels'
+            },
+
+            // DESAFÍO 13: Apodos
+            {
+                type: 'input',
+                title: '¿Cómo me llamas cariñosamente?',
+                description: 'Escribe uno de nuestros apodos... 💕',
+                answer: 'gordi'
+            },
+
+            // DESAFÍO 14: Juego simple de tapping
+            {
+                type: 'tapHearts',
+                title: 'Dale a todos los corazones lo más rápido posible',
+                description: 'Toca los 12 corazones en cualquier orden... ❤️⚡',
+                total: 12
+            },
+
+            // DESAFÍO 15: Viajes Sevilla
+            {
+                type: 'input',
+                title: '¿A cuántos partidos del Sevilla hemos ido fuera de casa juntos?',
+                description: 'Escribe el número... ⚽',
+                answer: '7'
+            },
+
+            // DESAFÍO 16: Completa la canción - Con la luna llena
+            {
+                type: 'multiple',
+                title: 'Completa la letra de "Con la luna llena"',
+                description: '"Porque te quiero como el mar quiere a un pez que nada adentro, dándole de respirar, protegiéndolo del _____"',
+                options: [
+                    'cielo',
+                    'mundo',
+                    'viento',
+                    'tiempo'
+                ],
+                correct: 2
+            },
+
+            // DESAFÍO 17: Pablo Alborán
+            {
+                type: 'multiple',
+                title: '¿Qué canción de Pablo Alborán nos gusta especialmente?',
+                description: 'Del disco que sonaba en Cazorla... 🎵',
+                options: [
+                    'Solamente tú',
+                    'Volver a empezar',
+                    'Perdóname',
+                    'Saturno'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 18: Ordena cronológicamente
+            {
+                type: 'timeline',
+                title: 'Ordena estos momentos del más antiguo al más reciente',
+                description: 'Arrastra para reordenar... 📅',
+                events: [
+                    { text: '🦀 Cangrejo en la piscina', order: 0 },
+                    { text: '💋 Primer beso (PSV-Sevilla)', order: 1 },
+                    { text: '🌲 San Nicolás del Puerto', order: 2 },
+                    { text: '🏰 Primera vez en Granada', order: 3 },
+                    { text: '🇬🇧 Viaje a Londres', order: 4 }
+                ]
+            },
+
+            // DESAFÍO 19: Slider amor
+            {
+                type: 'slider',
+                title: '¿Cuánto me quieres?',
+                description: 'Desliza hasta el nivel correcto... 💕',
+                target: 100
+            },
+
+            // DESAFÍO 20: Memory Game 2
+            {
+                type: 'memory',
+                title: 'Encuentra las parejas',
+                description: 'Momentos especiales... 💝',
+                pairs: ['💋', '🎬', '⚽', '🏰', '✈️', '🎤', '🌙', '❤️']
+            },
+
+            // DESAFÍO 21: Memoriza la secuencia
+            {
+                type: 'sequence',
+                title: 'Memoriza y repite la secuencia',
+                description: 'Observa los emojis que aparecen y repítelos en orden... 🧠',
+                length: 5
+            },
+
+            // DESAFÍO 22: Budapest y Viena
+            {
+                type: 'multiple',
+                title: '¿Qué dos ciudades visitamos en el mismo viaje?',
+                description: 'Nuestro último gran viaje... 🇭🇺🇦🇹',
+                options: [
+                    'Londres y París',
+                    'Budapest y Viena',
+                    'Milán y Venecia',
+                    'Praga y Berlín'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 23: Find Hearts 2
+            {
+                type: 'findHearts',
+                title: 'Encuentra los 4 corazones rojos',
+                description: 'Un poco más difícil esta vez... ❤️',
+                target: 4
+            },
+
+            // DESAFÍO 24: Match de fotos
+            {
+                type: 'photoMatch',
+                title: 'Encuentra las parejas de nuestras fotos',
+                description: 'Empareja las mitades correctas... 📸',
+                photos: [
+                    // AQUÍ IRÁN TUS 3 FOTOS
+                    // Por ahora uso placeholders, después tú las reemplazas
+                    'foto1.jpg',
+                    'foto2.jpg',
+                    'foto3.jpg'
+                ]
+            },
+
+            // DESAFÍO 25: Fuerteventura
+            {
+                type: 'input',
+                title: '¿En qué isla de Canarias estuvimos?',
+                description: 'Sol, playa y relax... 🏖️',
+                answer: 'fuerteventura'
+            },
+
+            // DESAFÍO 26: Milán
+            {
+                type: 'multiple',
+                title: '¿En qué mes fuimos a Milán?',
+                description: 'Ciudad de la moda... 🇮🇹',
+                options: [
+                    'Enero 2025',
+                    'Febrero 2025',
+                    'Marzo 2025',
+                    'Abril 2025'
+                ],
+                correct: 1
+            },
+
+            // DESAFÍO 27: Juego de reacción
+            {
+                type: 'reaction',
+                title: '¡Pon a prueba tus reflejos!',
+                description: 'Espera a que aparezca el corazón y tócalo rápido... ⚡',
+                timeout: 3000
+            },
+
+            // DESAFÍO 28: Puzzle números especiales
+            {
+                type: 'puzzle',
+                title: 'Ordena estos números',
+                description: 'Del 1 al 9... 🧩',
+                numbers: [5, 2, 8, 1, 9, 3, 7, 4, 6]
+            },
+
+            // DESAFÍO 29: Santander y Oviedo
+            {
+                type: 'multiple',
+                title: '¿Cuál de estas ciudades del norte NO hemos visitado juntos?',
+                description: 'Conociendo España... 🇪🇸',
+                options: [
+                    'Oviedo',
+                    'Santander',
+                    'San Sebastián',
+                    'Bilbao'
+                ],
+                correct: 2
+            },
+
+            // DESAFÍO 30: Slider 2
+            {
+                type: 'slider',
+                title: 'En una escala del 1 al 100, ¿cuánto te gusta viajar conmigo?',
+                description: 'Sé sincera... ✈️💕',
+                target: 100
+            },
+
+            // DESAFÍO 31: Adivina el número especial
+            {
+                type: 'input',
+                title: '¿Cuántos meses llevamos juntos desde octubre de 2023?',
+                description: 'Hasta febrero de 2026... 🗓️💕',
+                answer: '28'
+            },
+
+            // DESAFÍO 32: Pregunta especial
+            {
+                type: 'multiple',
+                title: '¿Qué hace especial cada momento contigo?',
+                description: 'La respuesta más importante... 💝',
+                options: [
+                    'La aventura',
+                    'La diversión',
+                    'Que estamos juntos',
+                    'Todo lo anterior'
+                ],
+                correct: 3
+            },
+
+            // DESAFÍO 33: FINAL
+            {
+                type: 'final',
+                title: '¡Lo has conseguido! 🎉',
+                message: `Has completado las 33 razones, pero hay infinitas más...
+
+Cada día a tu lado es un regalo, como cuando tú me llevaste a Granada por mi cumpleaños.
+
+Desde aquel "Control histórico de En Nesyri" hasta hoy, cada momento contigo ha sido especial. Desde el cangrejo en la piscina hasta nuestros viajes por el mundo, desde Saw X hasta bailar "Con la luna llena".
+
+Ahora me toca a mí devolverte ese detalle...`,
+                surprise: {
+                    title: 'Esta noche...',
+                    location: 'Granada te espera 🏰',
+                    detail: 'He reservado para cenar con vistas a la Alhambra',
+                    message: 'Porque los mejores momentos son los que construimos juntos 💫'
+                }
+            }
+        ];
+
+        function updateProgress() {
+            const percentage = (currentChallenge / challenges.length) * 100;
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressText').textContent = `${currentChallenge}/${challenges.length}`;
+        }
+
+        function renderChallenge() {
+            const challenge = challenges[currentChallenge];
+            const card = document.getElementById('challengeCard');
+            let html = '';
+
+            if (challenge.type !== 'final') {
+                html += `<div class="challenge-number">Desafío ${currentChallenge + 1}/33</div>`;
+            }
+
+            switch (challenge.type) {
+                case 'multiple':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="options">
+                            ${challenge.options.map((option, index) => 
+                                `<button class="option-btn" onclick="checkMultiple(${index})">${option}</button>`
+                            ).join('')}
+                        </div>
+                    `;
+                    break;
+
+                case 'input':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <input type="text" class="input-field" id="answerInput" placeholder="Escribe tu respuesta...">
+                        <button class="submit-btn" onclick="checkInput()">Comprobar</button>
+                    `;
+                    break;
+
+                case 'memory':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="memory-grid" id="memoryGrid"></div>
+                    `;
+                    setTimeout(() => initMemoryGame(challenge.pairs), 100);
+                    break;
+
+                case 'findHearts':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="hearts-container" id="heartsContainer"></div>
+                        <div class="hearts-counter" id="heartsCounter">0/${challenge.target}</div>
+                    `;
+                    setTimeout(() => initFindHearts(challenge.target), 100);
+                    break;
+
+                case 'tapHearts':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="hearts-container" id="heartsContainer"></div>
+                        <div class="hearts-counter" id="heartsCounter">0/${challenge.total}</div>
+                    `;
+                    setTimeout(() => initTapHearts(challenge.total), 100);
+                    break;
+
+                case 'slider':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="slider-container">
+                            <div class="slider-value" id="sliderValue">50</div>
+                            <input type="range" min="0" max="100" value="50" class="love-slider" id="loveSlider" 
+                                   oninput="document.getElementById('sliderValue').textContent = this.value">
+                        </div>
+                        <button class="submit-btn" onclick="checkSlider(${challenge.target})">Confirmar</button>
+                    `;
+                    break;
+
+                case 'reaction':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="reaction-area" id="reactionArea">
+                            <p style="font-size: 1.2em; color: #666;">Prepárate...</p>
+                        </div>
+                    `;
+                    setTimeout(() => initReactionGame(challenge.timeout), 100);
+                    break;
+
+                case 'puzzle':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="puzzle-pieces" id="puzzleGrid"></div>
+                        <button class="submit-btn" onclick="checkPuzzle()">Verificar Orden</button>
+                    `;
+                    setTimeout(() => initPuzzle(challenge.numbers), 100);
+                    break;
+
+                case 'timeline':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="timeline-container" id="timelineContainer"></div>
+                        <button class="submit-btn" onclick="checkTimeline()">Verificar Orden</button>
+                    `;
+                    setTimeout(() => initTimeline(challenge.events), 100);
+                    break;
+
+                case 'drawHeart':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="canvas-container">
+                            <canvas id="heartCanvas" width="300" height="300"></canvas>
+                            <p class="canvas-instruction">Punto actual: <span id="currentPoint">1</span>/${challenge.points}</p>
+                        </div>
+                    `;
+                    setTimeout(() => initDrawHeart(challenge.points), 100);
+                    break;
+
+                case 'photoMatch':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div class="photo-grid" id="photoGrid"></div>
+                    `;
+                    setTimeout(() => initPhotoMatch(challenge.photos), 100);
+                    break;
+
+                case 'sequence':
+                    html += `
+                        <h2 class="challenge-title">${challenge.title}</h2>
+                        <p class="challenge-description">${challenge.description}</p>
+                        <div id="sequenceDisplay" style="text-align: center; font-size: 4em; min-height: 100px; margin: 30px 0;"></div>
+                        <div class="hearts-container" id="sequenceButtons" style="display: none;"></div>
+                    `;
+                    setTimeout(() => initSequenceGame(challenge.length), 100);
+                    break;
+
+                case 'final':
+                    html = `
+                        <div class="final-screen">
+                            <div class="celebration">🎉💝🎊</div>
+                            <h2>${challenge.title}</h2>
+                            <div class="final-message">${challenge.message}</div>
+                            
+                            <div class="reveal-container">
+                                <div class="reveal-title">✨ Pero espera... hay algo más ✨</div>
+                                <div class="alhambra-icon">🏰</div>
+                                <div class="dinner-details">
+                                    <h3>${challenge.surprise.location}</h3>
+                                    <p>${challenge.surprise.detail}</p>
+                                    <p style="margin-top: 20px; font-size: 1.3em;">⏰ Esta noche nos espera algo especial</p>
+                                </div>
+                                <div class="final-message" style="margin-top: 30px;">
+                                    ${challenge.surprise.message}
+                                </div>
+                            </div>
+                            
+                            <div class="celebration">❤️💕💖</div>
+                        </div>
+                    `;
+                    break;
+            }
+
+            card.innerHTML = html;
+            updateProgress();
+        }
+
+        function checkMultiple(selected) {
+            const challenge = challenges[currentChallenge];
+            const buttons = document.querySelectorAll('.option-btn');
+            
+            if (selected === challenge.correct) {
+                buttons[selected].classList.add('correct');
+                setTimeout(() => nextChallenge(), 1000);
+            } else {
+                buttons[selected].classList.add('incorrect');
+                setTimeout(() => buttons[selected].classList.remove('incorrect'), 500);
+            }
+        }
+
+        function checkInput() {
+            const input = document.getElementById('answerInput').value.toLowerCase().trim();
+            const challenge = challenges[currentChallenge];
+            
+            // Array de respuestas aceptables para ciertos desafíos
+            let isCorrect = false;
+            
+            // Desafío 13 (apodos) - aceptar múltiples variantes
+            if (challenge.title && challenge.title.includes('cariñosamente')) {
+                const validAnswers = ['gordi', 'gordito', 'gordita', 'amor', 'amore', 'mi vida', 'vida'];
+                isCorrect = validAnswers.some(answer => input.includes(answer));
+            } 
+            // Desafío 12 (conciertos) - aceptar múltiples artistas
+            else if (challenge.description && challenge.description.includes('conciertos')) {
+                const validAnswers = ['rels', 'cruz', 'cafune', 'cafuné', 'dellafuente'];
+                isCorrect = validAnswers.some(answer => input.includes(answer));
+            }
+            // Otros desafíos
+            else {
+                isCorrect = input.includes(challenge.answer.toLowerCase());
+            }
+            
+            if (isCorrect) {
+                document.getElementById('answerInput').style.borderColor = '#4CAF50';
+                document.getElementById('answerInput').style.background = 'linear-gradient(135deg, #A8E6CF, #E8F5E9)';
+                setTimeout(() => nextChallenge(), 1000);
+            } else {
+                document.getElementById('answerInput').style.borderColor = '#F44336';
+                document.getElementById('answerInput').style.animation = 'shake 0.5s ease';
+                setTimeout(() => {
+                    document.getElementById('answerInput').style.borderColor = '#9DE5DD';
+                    document.getElementById('answerInput').style.animation = 'none';
+                }, 500);
+            }
+        }
+
+        function initMemoryGame(pairs) {
+            memoryFlipped = [];
+            memoryMatched = [];
+            const allSymbols = [...pairs, ...pairs];
+            memoryCards = allSymbols.sort(() => Math.random() - 0.5);
+            
+            const grid = document.getElementById('memoryGrid');
+            grid.innerHTML = memoryCards.map((symbol, i) => 
+                `<div class="memory-card" onclick="flipCard(${i})" data-symbol="${symbol}" data-index="${i}">
+                    <span style="display: none;">${symbol}</span>
+                </div>`
+            ).join('');
+        }
+
+        function flipCard(index) {
+            if (memoryFlipped.length >= 2 || memoryMatched.includes(index) || memoryFlipped.includes(index)) return;
+            
+            const cards = document.querySelectorAll('.memory-card');
+            const card = cards[index];
+            card.classList.add('flipped');
+            card.querySelector('span').style.display = 'block';
+            memoryFlipped.push(index);
+
+            if (memoryFlipped.length === 2) {
+                const [first, second] = memoryFlipped;
+                const firstSymbol = cards[first].dataset.symbol;
+                const secondSymbol = cards[second].dataset.symbol;
+
+                if (firstSymbol === secondSymbol) {
+                    setTimeout(() => {
+                        cards[first].classList.add('matched');
+                        cards[second].classList.add('matched');
+                        memoryMatched.push(first, second);
+                        memoryFlipped = [];
+
+                        if (memoryMatched.length === memoryCards.length) {
+                            setTimeout(() => nextChallenge(), 1000);
+                        }
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        cards[first].classList.remove('flipped');
+                        cards[second].classList.remove('flipped');
+                        cards[first].querySelector('span').style.display = 'none';
+                        cards[second].querySelector('span').style.display = 'none';
+                        memoryFlipped = [];
+                    }, 1000);
+                }
+            }
+        }
+
+        function initFindHearts(target) {
+            heartsFound = 0;
+            const container = document.getElementById('heartsContainer');
+            const hearts = ['💙', '💚', '💛', '💜', '❤️', '🧡', '💝', '💖'];
+            const redHeartPositions = [];
+            
+            while (redHeartPositions.length < target) {
+                const pos = Math.floor(Math.random() * 8);
+                if (!redHeartPositions.includes(pos)) {
+                    redHeartPositions.push(pos);
+                }
+            }
+
+            container.innerHTML = hearts.map((heart, i) => {
+                const isRed = redHeartPositions.includes(i);
+                return `<div class="heart-item" onclick="clickHeart(this, ${isRed}, ${target})">${isRed ? '❤️' : heart}</div>`;
+            }).join('');
+        }
+
+        function clickHeart(element, isCorrect, target) {
+            if (element.classList.contains('found')) return;
+            
+            if (isCorrect) {
+                element.classList.add('found');
+                heartsFound++;
+                document.getElementById('heartsCounter').textContent = `${heartsFound}/${target}`;
+                
+                if (heartsFound === target) {
+                    setTimeout(() => nextChallenge(), 1000);
+                }
+            }
+        }
+
+        function initTapHearts(total) {
+            heartsFound = 0;
+            const container = document.getElementById('heartsContainer');
+            const hearts = ['❤️', '💕', '💖', '💗', '💓', '💝', '💘', '💞', '💙', '💚', '💛', '💜'];
+            
+            container.innerHTML = hearts.map((heart, i) => 
+                `<div class="heart-item" onclick="tapHeart(this, ${total})">${heart}</div>`
+            ).join('');
+        }
+
+        function tapHeart(element, total) {
+            if (element.classList.contains('found')) return;
+            
+            element.classList.add('found');
+            element.style.opacity = '0.3';
+            heartsFound++;
+            document.getElementById('heartsCounter').textContent = `${heartsFound}/${total}`;
+            
+            if (heartsFound === total) {
+                setTimeout(() => nextChallenge(), 1000);
+            }
+        }
+
+        function checkSlider(target) {
+            const value = parseInt(document.getElementById('loveSlider').value);
+            if (value === target) {
+                nextChallenge();
+            } else if (value >= target - 5) {
+                alert('Venga ya... sabes que me quieres más jejejeje 💕');
+            } else if (value >= target - 15) {
+                alert('¡Casi! Un poquito más... 💕');
+            } else {
+                alert('¡Más amor! ❤️');
+            }
+        }
+
+        function initReactionGame(timeout) {
+            const area = document.getElementById('reactionArea');
+            const delay = Math.random() * 2000 + 1000;
+            
+            setTimeout(() => {
+                reactionStartTime = Date.now();
+                area.innerHTML = `
+                    <div style="font-size: 5em; padding: 40px 0; cursor: pointer;" onclick="reactionClick()">❤️</div>
+                    <p>¡TOCA AHORA!</p>
+                `;
+            }, delay);
+        }
+
+        function reactionClick() {
+            const reactionTime = Date.now() - reactionStartTime;
+            const area = document.getElementById('reactionArea');
+            area.innerHTML = `
+                <div style="font-size: 3em; padding: 30px 0;">🎯</div>
+                <p>¡Tu tiempo: ${reactionTime}ms!</p>
+                <p style="margin-top: 15px;">¡Reflejos increíbles! ⚡</p>
+            `;
+            setTimeout(() => nextChallenge(), 2000);
+        }
+
+        function initPuzzle(numbers) {
+            puzzleOrder = [...numbers];
+            const grid = document.getElementById('puzzleGrid');
+            grid.innerHTML = puzzleOrder.map((num, i) => 
+                `<div class="puzzle-piece" onclick="swapPuzzle(${i})" data-index="${i}">${num}</div>`
+            ).join('');
+        }
+
+        let selectedPuzzlePiece = null;
+
+        function swapPuzzle(index) {
+            if (selectedPuzzlePiece === null) {
+                selectedPuzzlePiece = index;
+                document.querySelectorAll('.puzzle-piece')[index].style.border = '3px solid ' + getComputedStyle(document.documentElement).getPropertyValue('--accent');
+            } else {
+                [puzzleOrder[selectedPuzzlePiece], puzzleOrder[index]] = [puzzleOrder[index], puzzleOrder[selectedPuzzlePiece]];
+                initPuzzle(puzzleOrder);
+                selectedPuzzlePiece = null;
+            }
+        }
+
+        function checkPuzzle() {
+            const isCorrect = puzzleOrder.every((num, i) => num === i + 1);
+            if (isCorrect) {
+                document.querySelectorAll('.puzzle-piece').forEach(piece => {
+                    piece.classList.add('correct-position');
+                });
+                setTimeout(() => nextChallenge(), 1000);
+            } else {
+                alert('¡Casi! Sigue intentándolo 🧩');
+            }
+        }
+
+        function initTimeline(events) {
+            const container = document.getElementById('timelineContainer');
+            const shuffled = [...events].sort(() => Math.random() - 0.5);
+            
+            container.innerHTML = shuffled.map((event, i) => 
+                `<div class="timeline-item" draggable="true" data-order="${event.order}" data-index="${i}">
+                    ${event.text}
+                </div>`
+            ).join('');
+
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragover', handleDragOver);
+                item.addEventListener('drop', handleDrop);
+                item.addEventListener('dragend', handleDragEnd);
+            });
+        }
+
+        function handleDragStart(e) {
+            draggedElement = this;
+            this.classList.add('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            if (this !== draggedElement) {
+                const allItems = [...document.querySelectorAll('.timeline-item')];
+                const draggedIndex = allItems.indexOf(draggedElement);
+                const targetIndex = allItems.indexOf(this);
+                
+                if (draggedIndex < targetIndex) {
+                    this.parentNode.insertBefore(draggedElement, this.nextSibling);
+                } else {
+                    this.parentNode.insertBefore(draggedElement, this);
+                }
+            }
+        }
+
+        function handleDragEnd() {
+            this.classList.remove('dragging');
+        }
+
+        function checkTimeline() {
+            const items = document.querySelectorAll('.timeline-item');
+            let isCorrect = true;
+            
+            items.forEach((item, index) => {
+                if (parseInt(item.dataset.order) === index) {
+                    item.classList.add('correct-order');
+                } else {
+                    isCorrect = false;
+                }
+            });
+
+            if (isCorrect) {
+                setTimeout(() => nextChallenge(), 1500);
+            } else {
+                setTimeout(() => {
+                    items.forEach(item => item.classList.remove('correct-order'));
+                }, 1000);
+                alert('¡Casi! Inténtalo de nuevo 📅');
+            }
+        }
+
+        function initDrawHeart(numPoints) {
+            const canvas = document.getElementById('heartCanvas');
+            const ctx = canvas.getContext('2d');
+            currentHeartPoint = 0;
+            heartPoints = [];
+
+            // Generar puntos en forma de corazón
+            const centerX = 150;
+            const centerY = 150;
+            const size = 80;
+
+            for (let i = 0; i < numPoints; i++) {
+                const t = (i / numPoints) * Math.PI * 2;
+                const x = centerX + size * (16 * Math.pow(Math.sin(t), 3));
+                const y = centerY - size * (13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t)) / 16;
+                heartPoints.push({x, y, number: i + 1});
+            }
+
+            // Dibujar puntos
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            heartPoints.forEach(point => {
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, 15, 0, Math.PI * 2);
+                ctx.fillStyle = '#BFF8F1';
+                ctx.fill();
+                ctx.strokeStyle = '#9DE5DD';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                ctx.fillStyle = '#2C3E50';
+                ctx.font = 'bold 12px Quicksand';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(point.number, point.x, point.y);
+            });
+
+            canvas.onclick = function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+                const x = (e.clientX - rect.left) * scaleX;
+                const y = (e.clientY - rect.top) * scaleY;
+
+                const nextPoint = heartPoints[currentHeartPoint];
+                const distance = Math.sqrt(Math.pow(x - nextPoint.x, 2) + Math.pow(y - nextPoint.y, 2));
+
+                if (distance < 20) {
+                    ctx.beginPath();
+                    ctx.arc(nextPoint.x, nextPoint.y, 15, 0, Math.PI * 2);
+                    ctx.fillStyle = '#FFB6C1';
+                    ctx.fill();
+                    
+                    if (currentHeartPoint > 0) {
+                        const prevPoint = heartPoints[currentHeartPoint - 1];
+                        ctx.beginPath();
+                        ctx.moveTo(prevPoint.x, prevPoint.y);
+                        ctx.lineTo(nextPoint.x, nextPoint.y);
+                        ctx.strokeStyle = '#FFB6C1';
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+                    }
+
+                    currentHeartPoint++;
+                    document.getElementById('currentPoint').textContent = currentHeartPoint + 1;
+
+                    if (currentHeartPoint === numPoints) {
+                        // Conectar último con primero
+                        const firstPoint = heartPoints[0];
+                        ctx.beginPath();
+                        ctx.moveTo(nextPoint.x, nextPoint.y);
+                        ctx.lineTo(firstPoint.x, firstPoint.y);
+                        ctx.strokeStyle = '#FFB6C1';
+                        ctx.lineWidth = 3;
+                        ctx.stroke();
+                        
+                        setTimeout(() => nextChallenge(), 1000);
+                    }
+                }
+            };
+        }
+
+        function initPhotoMatch(photos) {
+            // NOTA: Las fotos deben estar en la misma carpeta que este HTML
+            // Nombra tus fotos como: foto1.jpg, foto2.jpg, foto3.jpg
+            
+            photoMatches = [];
+            selectedPhotos = [];
+            
+            photos.forEach((photo, index) => {
+                photoMatches.push(
+                    { id: index * 2, photoIndex: index, half: 'left' },
+                    { id: index * 2 + 1, photoIndex: index, half: 'right' }
+                );
+            });
+            
+            photoMatches.sort(() => Math.random() - 0.5);
+            
+            const grid = document.getElementById('photoGrid');
+            grid.innerHTML = photoMatches.map((match, i) => {
+                const bgPosition = match.half === 'left' ? 'left center' : 'right center';
+                return `<div class="photo-piece" onclick="selectPhoto(${i})" data-photo-index="${match.photoIndex}" data-half="${match.half}" style="background-image: url('${photos[match.photoIndex]}'); background-position: ${bgPosition};"></div>`;
+            }).join('');
+        }
+
+        function selectPhoto(index) {
+            const pieces = document.querySelectorAll('.photo-piece');
+            const piece = pieces[index];
+            
+            if (piece.classList.contains('matched')) return;
+            
+            if (selectedPhotos.length === 0) {
+                piece.classList.add('selected');
+                selectedPhotos.push(index);
+            } else if (selectedPhotos.length === 1) {
+                if (selectedPhotos[0] === index) return;
+                
+                const firstPiece = pieces[selectedPhotos[0]];
+                const firstPhotoIndex = firstPiece.dataset.photoIndex;
+                const firstHalf = firstPiece.dataset.half;
+                const secondPhotoIndex = piece.dataset.photoIndex;
+                const secondHalf = piece.dataset.half;
+                
+                if (firstPhotoIndex === secondPhotoIndex && firstHalf !== secondHalf) {
+                    piece.classList.add('matched');
+                    firstPiece.classList.add('matched');
+                    firstPiece.classList.remove('selected');
+                    
+                    setTimeout(() => {
+                        if (document.querySelectorAll('.photo-piece.matched').length === photoMatches.length) {
+                            setTimeout(() => nextChallenge(), 1000);
+                        }
+                    }, 500);
+                } else {
+                    piece.classList.add('selected');
+                    setTimeout(() => {
+                        piece.classList.remove('selected');
+                        firstPiece.classList.remove('selected');
+                    }, 1000);
+                }
+                
+                selectedPhotos = [];
+            }
+        }
+
+        let sequencePattern = [];
+        let userSequence = [];
+
+        function initSequenceGame(length) {
+            sequencePattern = [];
+            userSequence = [];
+            const emojis = ['❤️', '💕', '💖', '💗', '💓'];
+            
+            // Generar secuencia aleatoria
+            for (let i = 0; i < length; i++) {
+                sequencePattern.push(emojis[Math.floor(Math.random() * emojis.length)]);
+            }
+            
+            // Mostrar secuencia
+            showSequence();
+        }
+
+        function showSequence() {
+            const display = document.getElementById('sequenceDisplay');
+            let index = 0;
+            
+            display.textContent = '👀 Observa...';
+            
+            const interval = setInterval(() => {
+                if (index < sequencePattern.length) {
+                    display.textContent = sequencePattern[index];
+                    index++;
+                } else {
+                    clearInterval(interval);
+                    display.textContent = '¡Ahora repítela!';
+                    showSequenceButtons();
+                }
+            }, 800);
+        }
+
+        function showSequenceButtons() {
+            const container = document.getElementById('sequenceButtons');
+            const emojis = ['❤️', '💕', '💖', '💗', '💓'];
+            
+            container.style.display = 'grid';
+            container.innerHTML = emojis.map(emoji => 
+                `<div class="heart-item" onclick="selectSequenceEmoji('${emoji}')" style="cursor: pointer;">${emoji}</div>`
+            ).join('');
+        }
+
+        function selectSequenceEmoji(emoji) {
+            userSequence.push(emoji);
+            const display = document.getElementById('sequenceDisplay');
+            display.textContent = userSequence.join(' ');
+            
+            // Verificar cada paso
+            const currentIndex = userSequence.length - 1;
+            if (userSequence[currentIndex] !== sequencePattern[currentIndex]) {
+                display.textContent = '❌ Incorrecto. Inténtalo de nuevo';
+                setTimeout(() => {
+                    userSequence = [];
+                    display.textContent = '¡Intenta de nuevo!';
+                }, 1500);
+                return;
+            }
+            
+            // Si completó toda la secuencia correctamente
+            if (userSequence.length === sequencePattern.length) {
+                display.textContent = '✅ ¡Perfecto!';
+                setTimeout(() => nextChallenge(), 1500);
+            }
+        }
+
+        function nextChallenge() {
+            currentChallenge++;
+            if (currentChallenge < challenges.length) {
+                renderChallenge();
+            }
+        }
+
+        // Initialize
+        renderChallenge();
+    </script>
+</body>
+</html>
